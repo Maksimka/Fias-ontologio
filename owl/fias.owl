@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://conteksoft.com/ontologies/2012/3/fias.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://conteksoft.com/ontologies/2012/3/fias.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&xsd;string">Онтология к базе данных Федеральной информационной адресной системы.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#AddressUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#District"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntraurbanArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Locality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Region"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Street"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#formalName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLevel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Moskva"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tomsk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TomskArea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TomskRegion"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AddressUnit"/>
+        <ObjectIntersectionOf>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#formalName"/>
+                <Datatype abbreviatedIRI="rdfs:Literal"/>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasLevel"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="&xsd;minInclusive">
+                        <Literal datatypeIRI="&xsd;integer">1</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="&xsd;maxInclusive">
+                        <Literal datatypeIRI="&xsd;integer">7</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+            <DataAllValuesFrom>
+                <DataProperty IRI="#formalName"/>
+                <Datatype abbreviatedIRI="rdfs:Literal"/>
+            </DataAllValuesFrom>
+            <DataAllValuesFrom>
+                <DataProperty IRI="#hasLevel"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="&xsd;minInclusive">
+                        <Literal datatypeIRI="&xsd;integer">1</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="&xsd;maxInclusive">
+                        <Literal datatypeIRI="&xsd;integer">7</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Area"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AddressUnit"/>
+            <DataHasValue>
+                <DataProperty IRI="#hasLevel"/>
+                <Literal datatypeIRI="&xsd;short">3</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#City"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AddressUnit"/>
+            <DataHasValue>
+                <DataProperty IRI="#hasLevel"/>
+                <Literal datatypeIRI="&xsd;short">4</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#District"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AddressUnit"/>
+            <DataHasValue>
+                <DataProperty IRI="#hasLevel"/>
+                <Literal datatypeIRI="&xsd;short">2</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#IntraurbanArea"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AddressUnit"/>
+            <DataHasValue>
+                <DataProperty IRI="#hasLevel"/>
+                <Literal datatypeIRI="&xsd;short">5</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Locality"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AddressUnit"/>
+            <DataHasValue>
+                <DataProperty IRI="#hasLevel"/>
+                <Literal datatypeIRI="&xsd;short">6</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Region"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AddressUnit"/>
+            <DataHasValue>
+                <DataProperty IRI="#hasLevel"/>
+                <Literal datatypeIRI="&xsd;short">1</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Street"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AddressUnit"/>
+            <DataHasValue>
+                <DataProperty IRI="#hasLevel"/>
+                <Literal datatypeIRI="&xsd;short">7</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <DisjointClasses>
+        <Class IRI="#Area"/>
+        <Class IRI="#City"/>
+        <Class IRI="#District"/>
+        <Class IRI="#IntraurbanArea"/>
+        <Class IRI="#Locality"/>
+        <Class IRI="#Region"/>
+        <Class IRI="#Street"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Moskva"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#TomskArea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#TomskRegion"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Tomsk"/>
+        <NamedIndividual IRI="#TomskRegion"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#TomskArea"/>
+        <NamedIndividual IRI="#TomskRegion"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#formalName"/>
+        <NamedIndividual IRI="#Moskva"/>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Москва</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLevel"/>
+        <NamedIndividual IRI="#Moskva"/>
+        <Literal datatypeIRI="&xsd;short">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#formalName"/>
+        <NamedIndividual IRI="#Tomsk"/>
+        <Literal datatypeIRI="&xsd;string">Томск</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLevel"/>
+        <NamedIndividual IRI="#Tomsk"/>
+        <Literal datatypeIRI="&xsd;short">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#formalName"/>
+        <NamedIndividual IRI="#TomskArea"/>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Томский район</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLevel"/>
+        <NamedIndividual IRI="#TomskArea"/>
+        <Literal datatypeIRI="&xsd;short">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#formalName"/>
+        <NamedIndividual IRI="#TomskRegion"/>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Томская область</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLevel"/>
+        <NamedIndividual IRI="#TomskRegion"/>
+        <Literal datatypeIRI="&xsd;short">1</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPart"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasPart"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isPartOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#AddressUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#AddressUnit"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#formalName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasLevel"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#formalName"/>
+        <Class IRI="#AddressUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLevel"/>
+        <Class IRI="#AddressUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#formalName"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLevel"/>
+        <Datatype abbreviatedIRI="xsd:short"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AddressUnit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Address unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AddressUnit</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Корневой класс для составных частей адреса.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AddressUnit</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Адресная часть</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Area</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Area</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Area</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Район</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#City</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">City</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#City</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Город</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#District</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#District</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Округ</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IntraurbanArea</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Intraurban area</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IntraurbanArea</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Внутригородской район</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Locality</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Locality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Locality</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Населённый пункт</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Region</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Region</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Region</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Регион</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Street</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Street</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Street</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">Улица</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPart</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">has part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPart</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">включает в себя</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPartOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">is part of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPartOf</IRI>
+        <Literal xml:lang="ru" datatypeIRI="&rdf;PlainLiteral">входит в состав</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.5.1928) http://owlapi.sourceforge.net -->
+
